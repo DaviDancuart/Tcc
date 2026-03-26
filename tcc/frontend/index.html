@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedScan AI - Diagnóstico por Imagem</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Cabeçalho -->
+        <div class="header">
+            <div class="logo">
+                <button onclick="showScreen('home')">🏥 MedScan AI</button>
+                <span> Saúde ao seu alcance</span>
+            </div>
+            <div class="nav-buttons">
+                <button class="btn btn-primary" onclick="showScreen('teste')">Teste</button>
+                <button class="btn btn-outline" onclick="showScreen('login')">Login</button>
+                <button class="btn btn-primary" onclick="showScreen('cadastro')">Cadastro</button>
+            </div>
+        </div>
+
+        <!-- Conteúdo Principal -->
+        <div class="content">
+            <!-- Tela Principal (Home) -->
+            <div id="screen-home" class="screen active">
+                <div class="home-container">
+                    <div class="home-header">
+                        <h1>🏥 MedScan AI</h1>
+                        <p class="subtitle">
+                            Transformando suas imagens em respostas claras sobre sua saúde, 
+                            de um jeito simples e rápido.
+                        </p>
+                    </div>
+
+                    <div class="home-highlight">
+                        <h2>Como podemos ajudar você?</h2>
+                        <p>
+                            Tiramos suas dúvidas através da análise de imagens médicas. 
+                            É simples, seguro e você recebe orientações claras do que fazer.
+                        </p>
+                    </div>
+
+                    <h2 style="color: #5fa8d3; margin: 40px 0 20px;">É muito fácil:</h2>
+                    
+                    <div class="steps-container">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <div class="step-icon">📸</div>
+                            <h3>Tire a foto</h3>
+                            <p>
+                                Use seu celular para fotografar seu exame ou a região 
+                                que precisa de avaliação.
+                            </p>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <div class="step-icon">📤</div>
+                            <h3>Envie para nós</h3>
+                            <p>
+                                Faça o upload da imagem. É rápido, seguro e só você 
+                                tem acesso.
+                            </p>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <div class="step-icon">⚕️</div>
+                            <h3>Médicos analisam</h3>
+                            <p>
+                                Nossa equipe de especialistas avalia sua imagem com 
+                                cuidado e atenção.
+                            </p>
+                        </div>
+
+                        <div class="step-card">
+                            <div class="step-number">4</div>
+                            <div class="step-icon">📋</div>
+                            <h3>Receba orientações</h3>
+                            <p>
+                                Em poucas horas você recebe orientações claras sobre 
+                                o que fazer.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🔒</div>
+                            <h3>100% Seguro</h3>
+                            <p>Suas imagens são confidenciais e protegidas</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">⚡</div>
+                            <h3>Rápido</h3>
+                            <p>Resposta em até 24 horas</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon">👨‍⚕️</div>
+                            <h3>Especialistas</h3>
+                            <p>Médicos qualificados em diversas áreas</p>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-section">
+                        <h2>O que nossos pacientes dizem</h2>
+                        <div class="testimonials">
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">
+                                    "Fiquei muito preocupada com uma mancha na pele. 
+                                    Tirei foto, enviei e em poucas horas já sabia que 
+                                    não era nada grave. Me trouxe muita paz!"
+                                </p>
+                                <p class="testimonial-author">Maria Silva</p>
+                            </div>
+                            <div class="testimonial-card">
+                                <p class="testimonial-text">
+                                    "Meu filho estava com uma vermelhidão estranha. 
+                                    Enviei a foto e me orientaram a ir ao pronto-socorro. 
+                                    Graças a Deus deu tudo certo!"
+                                </p>
+                                <p class="testimonial-author">Ana Paula Santos</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="cta-section">
+                        <h2>Pronto para começar?</h2>
+                        <p>
+                            Tire sua dúvida agora mesmo. É simples, rápido e você não precisa 
+                            sair de casa.
+                        </p>
+                        <div class="cta-buttons">
+                            <button class="btn btn-primary" onclick="showScreen('cadastro')">
+                                Criar minha conta
+                            </button>
+                            <button class="btn btn-outline" onclick="showScreen('login')">
+                                Já tenho conta
+                            </button>
+                        </div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 30px; color: #718096;">
+                        <p>👍 Mais de 10.000 pacientes já usaram</p>
+                        <p style="font-size: 14px; margin-top: 10px;">
+                            *Consulte sempre um médico presencialmente em casos de emergência
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tela de Login -->
+            <div id="screen-login" class="screen">
+                <h2 style="text-align: center; margin-bottom: 30px; color: #5fa8d3;">Acessar sua conta</h2>
+                <div class="form-container">
+                    <div class="form-group">
+                        <label>Tipo de usuário</label>
+                        <select id="login-type">
+                            <option value="paciente">Paciente</option>
+                            <option value="medico">Médico</option>
+                            <option value="admin">Administrador</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" placeholder="seu@email.com" id="login-email">
+                    </div>
+                    <div class="form-group">
+                        <label>Senha</label>
+                        <input type="password" placeholder="********" id="login-password">
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;" onclick="fazerLogin()">Entrar</button>
+                    <p style="text-align: center; margin-top: 20px;">
+                        <a href="#" onclick="showScreen('cadastro')" style="color: #5fa8d3;">Não tem conta? Cadastre-se</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Tela de Cadastro -->
+            <div id="screen-cadastro" class="screen">
+                <h2 style="text-align: center; margin-bottom: 30px; color: #5fa8d3;">Criar nova conta</h2>
+                <div class="form-container">
+                    <div class="form-group">
+                        <label>Tipo de conta</label>
+                        <select id="cadastro-tipo">
+                            <option value="paciente">Paciente</option>
+                            <option value="medico">Médico</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Nome completo</label>
+                        <input type="text" placeholder="Digite seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail</label>
+                        <input type="email" placeholder="seu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label>CPF</label>
+                        <input type="text" placeholder="000.000.000-00">
+                    </div>
+                    <div class="form-group" id="campo-crm" style="display: none;">
+                        <label>CRM</label>
+                        <input type="text" placeholder="000000">
+                    </div>
+                    <div class="form-group">
+                        <label>Celular</label>
+                        <input type="text" placeholder="(00) 00000-0000">
+                    </div>
+                    <div class="form-group">
+                        <label>Senha</label>
+                        <input type="password" placeholder="********">
+                    </div>
+                    <button class="btn btn-primary" style="width: 100%;">Cadastrar</button>
+                </div>
+            </div>
+
+            <!-- Tela do Médico (Upload) -->
+            <div id="screen-medico-upload" class="screen">
+                <div class="dashboard-container">
+                    <div class="sidebar">
+                        <ul class="sidebar-menu">
+                            <li class="active" onclick="showMedicoScreen('upload')">📤 Novo Upload</li>
+                            <li onclick="showMedicoScreen('diagnosticos')">📋 Diagnósticos</li>
+                            <li onclick="showMedicoScreen('pacientes')">👥 Pacientes</li>
+                            <li onclick="showScreen('home')">🚪 Sair</li>
+                        </ul>
+                    </div>
+                    <div class="main-content">
+                        <div id="medico-upload-content">
+                            <!-- Conteúdo dinâmico via JavaScript -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tela do Paciente -->
+            <div id="screen-paciente" class="screen">
+                <div class="dashboard-container">
+                    <div class="sidebar">
+                        <ul class="sidebar-menu">
+                            <li class="active" onclick="showPacienteScreen('exames')">📋 Meus Exames</li>
+                            <li onclick="showPacienteScreen('perfil')">👤 Meu Perfil</li>
+                            <li onclick="showScreen('home')">🚪 Sair</li>
+                        </ul>
+                    </div>
+                    <div class="main-content">
+                        <!-- Conteúdo dinâmico via JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tela de Diagnóstico + Recomendação -->
+            <div id="screen-diagnostico" class="screen">
+                <!-- Conteúdo dinâmico via JavaScript -->
+            </div>
+
+            <!-- Tela do Admin -->
+            <div id="screen-admin-dashboard" class="screen">
+                <div class="dashboard-container">
+                    <div class="sidebar">
+                        <ul class="sidebar-menu">
+                            <li class="active" onclick="showAdminScreen('dashboard')">📊 Dashboard</li>
+                            <li onclick="showAdminScreen('usuarios')">👥 Usuários</li>
+                            <li onclick="showAdminScreen('exames')">📋 Exames</li>
+                            <li onclick="showAdminScreen('relatorios')">📈 Relatórios</li>
+                            <li onclick="showScreen('home')">🚪 Sair</li>
+                        </ul>
+                    </div>
+                    <div class="main-content">
+                        <!-- Conteúdo dinâmico via JavaScript -->
+                    </div>
+                </div>
+            </div>
+            <!-- Tela de Teste IA - Diagnóstico de Leucemia -->
+            <div id="screen-teste" class="screen">
+            <div class="teste-ia-container">
+                <div class="teste-header">
+                    <h2>🤖 Teste IA - Diagnóstico de Leucemia</h2>
+                    <p class="subtitle">
+                        Nossa Inteligência Artificial analisa imagens de lâminas de sangue 
+                        para identificar possíveis indícios de leucemia.
+                    </p>
+                </div>
+
+                <div class="teste-grid">
+                    <!-- Área de Upload de Imagem -->
+                    <div class="upload-area">
+                        <h3>📸 Imagem para Análise</h3>
+                        <div class="image-upload-container">
+                            <div class="upload-box" id="uploadBox">
+                                <div class="upload-icon">🖼️</div>
+                                <p>Clique ou arraste uma imagem aqui</p>
+                                <p class="upload-hint">Formatos: JPG, PNG, BMP (máx. 10MB)</p>
+                                <input type="file" id="imageUpload" accept="image/*" style="display: none;">
+                                <button class="btn btn-primary" onclick="document.getElementById('imageUpload').click()">
+                                    Selecionar Imagem
+                                </button>
+                            </div>
+                            <div class="image-preview" id="imagePreview" style="display: none;">
+                                <img id="previewImg" alt="Pré-visualização da imagem">
+                                <button class="btn-remove" onclick="removerImagem()">✖ Remover</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Área de Diagnóstico -->
+                    <div class="diagnostico-area">
+                        <h3>📋 Resultado do Diagnóstico</h3>
+                        <div class="diagnostico-card" id="diagnosticoCard">
+                            <div class="diagnostico-placeholder">
+                                <div class="placeholder-icon">🔬</div>
+                                <p>Envie uma imagem para análise</p>
+                                <p class="placeholder-hint">A IA irá processar a imagem e fornecer o diagnóstico</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nova Seção: Anamnese do Paciente -->
+                <div class="anamnese-section">
+                    <div class="anamnese-header">
+                        <h3>📋 Anamnese do Paciente</h3>
+                        <p class="anamnese-subtitle">Preencha os dados clínicos para um diagnóstico mais preciso</p>
+                    </div>
+
+                    <div class="anamnese-grid">
+                        <!-- Dados Pessoais -->
+                        <div class="anamnese-card">
+                            <h4>👤 Dados Pessoais</h4>
+                            <div class="form-group">
+                                <label>Nome do Paciente</label>
+                                <input type="text" id="pacienteNome" placeholder="Nome completo" class="anamnese-input">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Idade</label>
+                                    <input type="number" id="pacienteIdade" placeholder="Anos" class="anamnese-input">
+                                </div>
+                                <div class="form-group">
+                                    <label>Sexo</label>
+                                    <select id="pacienteSexo" class="anamnese-select">
+                                        <option value="">Selecione</option>
+                                        <option value="masculino">Masculino</option>
+                                        <option value="feminino">Feminino</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Histórico Clínico -->
+                        <div class="anamnese-card">
+                            <h4>🏥 Histórico Clínico</h4>
+                            <div class="form-group">
+                                <label>Doenças Pré-existentes</label>
+                                <textarea id="doencasPreExistentes" rows="3" placeholder="Diabetes, hipertensão, doenças autoimunes, etc." class="anamnese-textarea"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Histórico Familiar de Câncer</label>
+                                <div class="radio-group">
+                                    <label class="radio-label">
+                                        <input type="radio" name="historicoFamiliar" value="sim"> Sim
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="historicoFamiliar" value="nao"> Não
+                                    </label>
+                                    <label class="radio-label">
+                                        <input type="radio" name="historicoFamiliar" value="nao_sei"> Não sei
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group" id="parentescoGroup" style="display: none;">
+                                <label>Parentesco com o familiar afetado</label>
+                                <input type="text" id="parentesco" placeholder="Ex: pai, mãe, irmão" class="anamnese-input">
+                            </div>
+                        </div>
+
+                        <!-- Sintomas Atuais -->
+                        <div class="anamnese-card">
+                            <h4>🤒 Sintomas Atuais</h4>
+                            <div class="form-group">
+                                <label>Sintomas Presentes</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="fadiga"> Fadiga excessiva
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="febre"> Febre persistente
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="perda_peso"> Perda de peso inexplicada
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="manchas"> Manchas roxas frequentes
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="dores"> Dores ósseas/articulares
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="linfonodos"> Gânglios linfáticos aumentados
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="infeccoes"> Infecções recorrentes
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" value="sangramento"> Sangramento anormal
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Outros Sintomas</label>
+                                <textarea id="outrosSintomas" rows="2" placeholder="Descreva outros sintomas relevantes..." class="anamnese-textarea"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Início dos Sintomas</label>
+                                <input type="text" id="inicioSintomas" placeholder="Ex: há 2 semanas, há 3 meses" class="anamnese-input">
+                            </div>
+                        </div>
+
+                        <!-- Exames Laboratoriais -->
+                        <div class="anamnese-card">
+                            <h4>🧪 Exames Laboratoriais</h4>
+                            <div class="form-group">
+                                <label>Hemoglobina (g/dL)</label>
+                                <input type="text" id="hemoglobina" placeholder="Ex: 12.5" class="anamnese-input">
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Leucócitos (/mm³)</label>
+                                    <input type="text" id="leucocitos" placeholder="Ex: 4500" class="anamnese-input">
+                                </div>
+                                <div class="form-group">
+                                    <label>Plaquetas (/mm³)</label>
+                                    <input type="text" id="plaquetas" placeholder="Ex: 150000" class="anamnese-input">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Observações do Médico</label>
+                                <textarea id="observacoesMedico" rows="3" placeholder="Insira observações relevantes sobre o quadro clínico do paciente..." class="anamnese-textarea"></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botões de Ação da Anamnese -->
+                    <div class="anamnese-actions">
+                        <button class="btn btn-outline" onclick="limparAnamnese()">
+                            🗑️ Limpar Campos
+                        </button>
+                        <button class="btn btn-pdf" onclick="importarExcel()">
+                            📊 Importar PDF
+                        </button>
+                        <button class="btn btn-secondary" onclick="salvarAnamnese()">
+                            💾 Salvar Anamnese
+                        </button>
+                    </div>
+
+                    <!-- Simulação de Diagnóstico (Botão para teste) -->
+                    <div class="action-buttons">
+                        <button class="btn btn-primary" id="simularDiagnosticoBtn" onclick="simularDiagnostico()">
+                            🧪 Gerar Análise
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Área de Informações Adicionais -->
+                <div class="info-section">
+                    <div class="info-card">
+                        <div class="info-icon">⚕️</div>
+                        <h4>Sobre a Leucemia</h4>
+                        <p>
+                            A leucemia é um câncer que afeta os glóbulos brancos do sangue. 
+                            O diagnóstico precoce é fundamental para o sucesso do tratamento.
+                        </p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">🔍</div>
+                        <h4>Como funciona a IA</h4>
+                        <p>
+                            Nossa IA analisa características celulares como forma, tamanho e 
+                            núcleo das células sanguíneas para identificar possíveis anomalias.
+                        </p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">📊</div>
+                        <h4>Precisão do Teste</h4>
+                        <p>
+                            Nosso modelo tem 94% de acurácia na identificação de células 
+                            leucêmicas. Sempre consulte um médico para confirmação.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="disclaimer">
+                    <p>
+                        ⚠️ <strong>Aviso importante:</strong> Este é um teste de IA para fins demonstrativos. 
+                        O diagnóstico definitivo deve ser feito por um hematologista através de exames laboratoriais.
+                    </p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
